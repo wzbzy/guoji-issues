@@ -6,6 +6,7 @@ body:
     attributes:
       value: |
         感谢反馈！信息越完整处理越快。带 * 的为必填。
+        **如果是"改了 A 处、B 处没跟着变"的问题，请务必写清：A 具体改了什么（哪个页面、哪个字段、改成什么值）+ B 具体哪里没变（哪个页面、哪个显示项）。**
   - type: dropdown
     id: module
     attributes:
@@ -41,24 +42,26 @@ body:
     id: description
     attributes:
       label: 问题描述 *
-      description: 现象是什么？期望是什么？
-      placeholder: 例如：产品详情页图片未压缩，进入很慢，期望加上压缩。
+      description: 现象是什么？期望是什么？如果是"改了 A、B 没变"，写清 A 的具体字段和值、B 的具体位置。
+      placeholder: |
+        例：公司主体管理里把某主体的虚拟代码从 0001 改成 0002 并保存后，
+        客户档案的「专用付款帐号」仍显示按 0001 生成的旧号码，期望自动变成新号码。
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
       label: 复现步骤
-      description: 怎么一步步走到这个问题的
+      description: 怎么一步步走到这个问题的；修改过的值请写具体（从什么改成什么）
       placeholder: |
-        1. 打开……
-        2. 点击……
-        3. 看到……
+        1. 打开……把××从 A 改成 B，保存
+        2. 打开……查看
+        3. 看到……仍是旧值
   - type: textarea
     id: screenshots
     attributes:
       label: 截图
-      description: 直接把图片拖进输入框
+      description: 直接拖图或 Ctrl+V 粘贴；**请用红框圈出"没有变化的那个值"**——红框比文字更快定位
   - type: textarea
     id: extra
     attributes:
